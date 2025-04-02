@@ -61,9 +61,9 @@ def generate_qr():
         qr_img.save(img_io, 'PNG')
         img_io.seek(0)
         return send_file(img_io, mimetype='image/png', download_name='qr_code.png')
-
+app = Flask(__name__, template_folder='templates')
     return render_template('index.html')
-    app = Flask(__name__, template_folder='templates')
+    
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))  # Берём PORT из переменных окружения
